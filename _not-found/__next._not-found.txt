@@ -1,0 +1,4 @@
+1:"$Sreact.fragment"
+2:I[39756,["/Users/murtuza/portfolio-react/out/_next/static/chunks/5dabc1c14dff4f26.js","/Users/murtuza/portfolio-react/out/_next/static/chunks/d2be314c3ece3fbe.js"],"default"]
+3:I[37457,["/Users/murtuza/portfolio-react/out/_next/static/chunks/5dabc1c14dff4f26.js","/Users/murtuza/portfolio-react/out/_next/static/chunks/d2be314c3ece3fbe.js"],"default"]
+0:{"buildId":"gQsoA1pN8Cf_Y_icR2hLL","rsc":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"loading":null,"isPartial":false}
