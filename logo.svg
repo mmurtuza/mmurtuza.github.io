@@ -1,0 +1,11 @@
+<svg width="200" height="60" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- M letter -->
+  <path d="M5 50V10L20 35L35 10V50H30V22L20 40L10 22V50H5Z" fill="currentColor"/>
+  
+  <!-- Code brackets < > -->
+  <path d="M42 25L52 35L42 45" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  
+  
+  <!-- Text: murtuza.dev -->
+  <text x="60" y="40" font-family="system-ui, -apple-system, sans-serif" font-size="25" font-weight="500" fill="currentColor">murtuza.dev</text>
+</svg>

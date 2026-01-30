@@ -1,0 +1,10 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- M letter with code elements -->
+  <rect width="32" height="32" rx="6" fill="#1a1a1a" />
+
+  <!-- M -->
+  <path d="M6 26V6L12 16L18 6V26H16V12L12 20L8 12V26H6Z" fill="white" />
+
+  <!-- Code bracket > -->
+  <path d="M21 11L26 16L21 21" stroke="#888888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+</svg>

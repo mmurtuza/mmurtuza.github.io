@@ -1,0 +1,10 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Apple Touch Icon -->
+    <rect width="180" height="180" rx="40" fill="#1a1a1a" />
+
+    <!-- M letter -->
+    <path d="M40 140V40L70 90L100 40V140H90V65L70 105L50 65V140H40Z" fill="white" />
+
+    <!-- Code bracket > -->
+    <path d="M115 60L140 90L115 120" stroke="#888888" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
