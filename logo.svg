@@ -1,51 +1,73 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 150" width="100%" height="100%">
-  <style>
-    .logo-part { opacity: 0; }
-    #m-dot { transform: scale(0); }
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 120" role="img" aria-labelledby="logo-title" > 
+ <title id="logo-title">murtuza.dev</title> 
+ <defs> 
+ <linearGradient id="badge-grad" x1="0" y1="0" x2="1" y2="1"> 
+ <stop offset="0" stop-color="#22C7F0" /> 
+ <stop offset="1" stop-color="#0087AD" /> 
+ </linearGradient> 
+ </defs> 
 
-    @keyframes slideDown Fade {
-      from { opacity: 0; transform: translateY(-40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+ <style> 
+ :root { 
+ --text-main: #0F172A; 
+ --text-muted: #64748B; 
+ } 
+ @media (prefers-color-scheme: dark) { 
+ :root { 
+ --text-main: #E2E8F0; 
+ --text-muted: #94A3B8; 
+ } 
+ } 
 
-    @keyframes dropIn {
-      from { opacity: 0; transform: translateY(-60px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+ .t-main { fill: var(--text-main); } 
+ .t-dot { fill: #00ADD8; } 
+ .t-muted { fill: var(--text-muted); } 
 
-    @keyframes popBounce {
-      0% { opacity: 0; transform: scale(0); }
-      70% { opacity: 1; transform: scale(1.3); } 
-      100% { opacity: 1; transform: scale(1); }
-    }
+ @keyframes badgePop { 
+ 0% { opacity: 0; transform: scale(0.6); } 
+ 70% { opacity: 1; transform: scale(1.06); } 
+ 100% { opacity: 1; transform: scale(1); } 
+ } 
+ @keyframes draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } } 
+ @keyframes appear { from { opacity: 0; } to { opacity: 1; } } 
+ @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } } 
+ @keyframes fadeInUp { 
+ from { opacity: 0; transform: translateY(16px); } 
+ to { opacity: 1; transform: translateY(0); } 
+ } 
 
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+ #badge { 
+ transform-box: fill-box; 
+ transform-origin: center; 
+ animation: badgePop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both; 
+ } 
+ #prompt { 
+ stroke-dasharray: 1; 
+ animation: draw 0.45s ease-out 0.7s both; 
+ } 
+ #cursor { 
+ animation: 
+ appear 0.01s linear 1.2s both, 
+ blink 1.1s step-end 1.5s infinite; 
+ } 
+ #wordmark { animation: fadeInUp 0.7s ease-out 1.0s both; } 
 
-    #m-left { animation: slideDownFade 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards 0.2s; }
-    #m-right { animation: slideDownFade 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards 0.4s; }
-    #m-center { animation: dropIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards 0.8s; }
+ @media (prefers-reduced-motion: reduce) { 
+ #badge, #prompt, #cursor, #wordmark { animation: none; } 
+ #prompt { stroke-dasharray: none; } 
+ } 
+ </style> 
 
-    #m-dot { 
-      transform-origin: 80px 15px; /* Ensures it scales from its center */
-      animation: popBounce 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards 1.3s; 
-    }
-    
-    #logo-text-group { animation: fadeInUp 0.8s ease-out forwards 1.6s; }
-  </style>
+ <g transform="translate(10, 10)"> 
+ <rect id="badge" width="100" height="100" rx="24" fill="url(#badge-grad)" /> 
+ <path id="prompt" pathLength="1" d="M 30 33 L 52 50 L 30 67" 
+ fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" /> 
+ <rect id="cursor" x="58" y="63" width="20" height="9" rx="4.5" fill="#FF2D20" /> 
+ </g> 
 
-  <g transform="translate(20, 25)">
-    <path id="m-left" class="logo-part" d="M 20 100 L 20 30 L 45 15 L 45 100 Z" fill="#00ADD8" />
-    <path id="m-right" class="logo-part" d="M 80 100 L 80 30 L 55 15 L 55 100 Z" fill="#00ADD8" />
-    <path id="m-center" class="logo-part" d="M 20 30 L 50 60 L 80 30 L 50 15 Z" fill="#00799E" />
-    <circle id="m-dot" cx="80" cy="15" r="6" fill="#FF2D20" />
-  </g>
-  
-  <g id="logo-text-group" class="logo-part">
-      <text x="130" y="90" font-family="system-ui, -apple-system, sans-serif" font-size="48" font-weight="800" fill="#E2E8F0" letter-spacing="-1.5">
-        murtuza<tspan fill="#00ADD8">.</tspan><tspan fill="#94A3B8" font-weight="500">dev</tspan>
-      </text>
-  </g>
-</svg>
+ <g id="wordmark"> 
+ <path class="t-main" d="M150.38 51.11Q151.97 48.67 154.16 47.39Q156.35 46.12 158.98 46.12Q163.5 46.12 165.87 48.91Q168.23 51.7 168.23 57.02V73H159.8V59.31Q159.82 59.01 159.83 58.68Q159.84 58.35 159.84 57.74Q159.84 54.95 159.02 53.7Q158.2 52.45 156.38 52.45Q153.98 52.45 152.68 54.41Q151.38 56.38 151.34 60.11V73H142.9V59.31Q142.9 54.95 142.15 53.7Q141.4 52.45 139.48 52.45Q137.06 52.45 135.75 54.43Q134.44 56.41 134.44 60.09V73H126V46.75H134.44V50.59Q135.98 48.37 137.99 47.24Q139.99 46.12 142.41 46.12Q145.12 46.12 147.21 47.43Q149.3 48.74 150.38 51.11ZM174.28 62.78V46.75H182.72V49.38Q182.72 51.51 182.7 54.73Q182.67 57.95 182.67 59.03Q182.67 62.2 182.84 63.59Q183 64.98 183.4 65.62Q183.91 66.44 184.75 66.88Q185.58 67.33 186.66 67.33Q189.28 67.33 190.78 65.31Q192.28 63.3 192.28 59.71V46.75H200.67V73H192.28V69.2Q190.38 71.5 188.26 72.59Q186.14 73.68 183.59 73.68Q179.04 73.68 176.66 70.89Q174.28 68.1 174.28 62.78ZM226.73 53.9Q225.63 53.38 224.54 53.14Q223.45 52.89 222.35 52.89Q219.12 52.89 217.37 54.96Q215.62 57.04 215.62 60.91V73H207.23V46.75H215.62V51.06Q217.24 48.48 219.34 47.3Q221.44 46.12 224.37 46.12Q224.79 46.12 225.28 46.15Q225.77 46.19 226.71 46.3ZM238.57 39.3V46.75H247.22V52.75H238.57V63.88Q238.57 65.71 239.3 66.36Q240.02 67 242.18 67H246.49V73H239.3Q234.33 73 232.25 70.93Q230.18 68.85 230.18 63.88V52.75H226.01V46.75H230.18V39.3ZM250.57 62.78V46.75H259.01V49.38Q259.01 51.51 258.98 54.73Q258.96 57.95 258.96 59.03Q258.96 62.2 259.12 63.59Q259.29 64.98 259.69 65.62Q260.2 66.44 261.04 66.88Q261.87 67.33 262.95 67.33Q265.57 67.33 267.07 65.31Q268.57 63.3 268.57 59.71V46.75H276.96V73H268.57V69.2Q266.67 71.5 264.55 72.59Q262.43 73.68 259.88 73.68Q255.33 73.68 252.95 70.89Q250.57 68.1 250.57 62.78ZM282.23 46.75H305.13V52.61L291.3 67H305.13V73H281.65V67.14L295.48 52.75H282.23ZM321.73 61.19Q319.1 61.19 317.78 62.08Q316.45 62.97 316.45 64.7Q316.45 66.3 317.52 67.2Q318.59 68.1 320.48 68.1Q322.85 68.1 324.47 66.4Q326.09 64.7 326.09 62.15V61.19ZM334.55 58.02V73H326.09V69.11Q324.4 71.5 322.29 72.59Q320.18 73.68 317.16 73.68Q313.08 73.68 310.54 71.3Q307.99 68.92 307.99 65.12Q307.99 60.51 311.17 58.35Q314.34 56.2 321.14 56.2H326.09V55.54Q326.09 53.55 324.52 52.62Q322.95 51.7 319.62 51.7Q316.92 51.7 314.6 52.23Q312.28 52.77 310.29 53.85V47.45Q312.98 46.8 315.7 46.46Q318.42 46.12 321.14 46.12Q328.24 46.12 331.39 48.92Q334.55 51.72 334.55 58.02Z" /> 
+ <circle class="t-dot" cx="345.94" cy="68.9" r="5.06" /> 
+ <path class="t-muted" d="M375.35 50.73V36.53H379.66V73H375.35V69.06Q373.99 71.41 371.92 72.54Q369.84 73.68 366.94 73.68Q362.18 73.68 359.19 69.88Q356.2 66.09 356.2 59.9Q356.2 53.71 359.19 49.91Q362.18 46.12 366.94 46.12Q369.84 46.12 371.92 47.25Q373.99 48.39 375.35 50.73ZM360.66 59.9Q360.66 64.66 362.61 67.36Q364.57 70.07 367.99 70.07Q371.41 70.07 373.38 67.36Q375.35 64.66 375.35 59.9Q375.35 55.14 373.38 52.43Q371.41 49.73 367.99 49.73Q364.57 49.73 362.61 52.43Q360.66 55.14 360.66 59.9ZM409.5 58.8V60.91H389.67Q389.95 65.36 392.36 67.69Q394.76 70.02 399.05 70.02Q401.53 70.02 403.86 69.41Q406.2 68.8 408.49 67.59V71.66Q406.17 72.65 403.73 73.16Q401.3 73.68 398.79 73.68Q392.51 73.68 388.84 70.02Q385.17 66.37 385.17 60.13Q385.17 53.69 388.65 49.9Q392.13 46.12 398.04 46.12Q403.34 46.12 406.42 49.53Q409.5 52.94 409.5 58.8ZM405.19 57.53Q405.14 53.99 403.21 51.88Q401.27 49.77 398.09 49.77Q394.48 49.77 392.31 51.81Q390.14 53.85 389.81 57.55ZM411.98 46.75H416.55L424.76 68.78L432.96 46.75H437.53L427.69 73H421.83Z" /> 
+ </g> 
+</svg> 
